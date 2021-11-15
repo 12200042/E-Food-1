@@ -1,1 +1,1 @@
-web: gunicorn automated-canteen-system.wsgi
+web: gunicorn E-Food.wsgi
