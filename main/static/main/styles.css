@@ -17,3 +17,14 @@
     text-align: center;
     justify-content: center;
 }
+.footer{
+    border: 1px solid red;
+    text-align: center;
+    color: black;
+}
+.footer .a{
+    border: 1px solid red;
+    text-align: center;
+    color: black;
+    padding-left: 50px;
+}
