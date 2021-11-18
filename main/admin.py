@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Item, CartItems, Reviews
+from .models import Item, CartItems
 from django.db import models
 
 class ItemAdmin(admin.ModelAdmin):
@@ -31,4 +31,4 @@ class ReviewsAdmin(admin.ModelAdmin):
 
 admin.site.register(Item,ItemAdmin)
 admin.site.register(CartItems,CartItemsAdmin)
-admin.site.register(Reviews,ReviewsAdmin)
+

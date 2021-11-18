@@ -1,14 +1,27 @@
 {% extends "main/layout.html" %}
-{% load crispy_forms_tags %} 
 {% block content %}
 <div class="container">
     <h1>Signup</h1>
     <div class="form-border">
         <form class="site-form" action="{% url 'accounts:signup' %}" method="post">
+                <form name="signupform" class="box" action="signup" method="POST">
+                    {% csrf_token %}
+                    <div id="div_id_username" class="form-group"> <label for="id_username" class=" requiredField">
+                                    Username<span class="asteriskField">*</span> </label> <div class=""> <input type="text" name="username" maxlength="150" autofocus class="textinput textInput form-control" required id="id_username"> <small id="hint_id_username" class="form-text text-muted">Required. 150 characters or fewer. Letters, digits and @/./+/-/_ only.</small> </div> </div> <div id="div_id_email" class="form-group"> <label for="id_email" class=" requiredField">
+                                    Email<span class="asteriskField">*</span> </label> <div class=""> <input type="email" pattern="[0-9.gcit_%+-]+@[a-z.edu]+\.[bt]{2,}$"name="email" class="emailinput form-control" required id="id_email"> </div> </div> <div id="div_id_phone_number" class="form-group"> <label for="id_phone_number" class=" requiredField">
+                                    Phone number<span class="asteriskField">*</span> </label> <div class=""> <input type="text" name="phone_number" class="textinput textInput form-control" required id="id_phone_number"> </div> </div> <div id="div_id_first_name" class="form-group"> <label for="id_first_name" class=" requiredField">
+                                    First name<span class="asteriskField">*</span> </label> <div class=""> <input type="text" name="first_name" class="textinput textInput form-control" required id="id_first_name"> </div> </div> <div id="div_id_last_name" class="form-group"> <label for="id_last_name" class=" requiredField">
+                                    Last name<span class="asteriskField">*</span> </label> <div class=""> <input type="text" name="last_name" class="textinput textInput form-control" required id="id_last_name"> </div> </div> <div id="div_id_password1" class="form-group"> <label for="id_password1" class=" requiredField">
+                                    Password<span class="asteriskField">*</span> </label> <div class=""> <input type="password"  name="password1" autocomplete="new-password" class="textinput textInput form-control" required id="id_password1"> <small id="hint_id_password1" class="form-text text-muted"><ul><li>Your password can’t be too similar to your other personal information.</li><li>Your password must contain at least 8 characters.</li><li>Your password can’t be a commonly used password.</li><li>Your password can’t be entirely numeric.</li></ul></small> </div> </div> <div id="div_id_password2" class="form-group"> <label for="id_password2" class=" requiredField">
+                                    Password confirmation<span class="asteriskField">*</span> </label> <div class=""> <input type="password" name="password2" autocomplete="new-password" class="textinput textInput form-control" required id="id_password2"> <small id="hint_id_password2" class="form-text text-muted">Enter the same password as before, for verification.</small> </div> </div>
+                    
+                                <input type="submit" value="Signup" class="btn">
+                            </form>
+                        </div>
+                    </div>
+                    
+                </form>
             {% csrf_token %}
-            {{ form|crispy }}
-            <input type="submit" value="Signup" class="btn">
-        </form>
-    </div>
+           
 </div>
 {% endblock %}

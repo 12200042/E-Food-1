@@ -31,3 +31,8 @@ def logout_view(request):
     if request.method == 'POST':
             logout(request)
             return redirect('/')
+
+def feedback(request):
+    if request.method == 'GET':
+            feedback(request)
+            return redirect('/')

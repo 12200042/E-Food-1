@@ -2,20 +2,11 @@ from django.urls import path
 from . import views
 from .views import (
     MenuListView,
-    menuDetail,
-    add_to_cart,
-    get_cart_items,
-    order_item,
     CartDeleteView,
-    order_details,
-    admin_view,
-    item_list,
-    pending_orders,
     ItemCreateView,
     ItemUpdateView,
     ItemDeleteView,
-    update_status,
-    add_reviews,
+   
 )
 
 app_name = "main"
@@ -37,4 +28,6 @@ urlpatterns = [
     path('admin_dashboard/', views.admin_dashboard, name='admin_dashboard'),
     path('update_status/<int:pk>', views.update_status, name='update_status'),
     path('postReview', views.add_reviews, name='add_reviews'),
+    path('table/', views.TableBook, name='table'),
+    path('feedback/',views.feedback,name='feedback'),
 ]

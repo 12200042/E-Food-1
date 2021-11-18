@@ -1,3 +1,4 @@
+from typing import ContextManager
 from django.shortcuts import render, get_object_or_404, redirect
 from .models import Item, CartItems, Reviews
 from django.contrib import messages
@@ -197,3 +198,34 @@ def admin_dashboard(request):
     }
     return render(request, 'main/admin_dashboard.html', context)
 
+@login_required(login_url='/accounts/login/')
+@login_required
+def TableBook(request):
+    if request.method=="POST":
+        date=request.POST['date']
+        time=request.POST['time']
+        person=request.POST['person']
+        name=request.POST['name']
+        email=request.POST['email']
+        phone=request.POST['phone']
+        occasion=request.POST['occasion']
+        table_book=TableBook(date=date,time=time,person=person,
+                    name=name,email=email,phone=phone,
+                    occasion=occasion)
+        table_book.save()
+        context={'messages':'Thank you for your reservation.'}
+        return render(request,'main/table.html',context)
+    else:
+        return render(request,'main/table.html',{})
+
+@login_required(login_url='/accounts/login/')
+@login_required
+def feedback(request):
+    if request.method == "POST":
+        form = request.POST
+        feedback.objects.create(
+            feedback = form['feedback']
+        )
+        messages.success(request,"Your feedback had been successfully submitted. Thankyou, and have a good day:)")
+        return redirect("feedback")
+    return render(request, 'main/feedback.html')

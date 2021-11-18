@@ -17,14 +17,17 @@
     text-align: center;
     justify-content: center;
 }
-.footer{
-    border: 1px solid red;
-    text-align: center;
-    color: black;
-}
-.footer .a{
+
+/* .footer .a{
     border: 1px solid red;
     text-align: center;
     color: black;
     padding-left: 50px;
 }
+#footer{
+    border: 1px solid red;
+
+}
+.feedback .feedback{
+    border: 3px solid red;
+} */

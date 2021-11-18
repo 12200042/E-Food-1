@@ -7,11 +7,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="{% static 'main/styles.css' %}">
-    <title>E-Food</title>
+    <title>Canteen System</title>
 </head>
-<body>
+<body style="background-color:gray;">
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-        <a class="navbar-brand" href="/"><h3>The XYZ</h3></a>
+        <a class="navbar-brand" href="/"><h3>Rich Table canteen</h3></a>
+       
         <button
             class="navbar-toggler"
             type="button"
@@ -40,6 +41,9 @@
                     {% else %}
                         <li><a href="{% url 'main:cart' %}" class="mr-2 text-light">My Cart🛒</a></li>
                         <li><a href="{% url 'main:order_details' %}" class="mr-2 text-light">Your Orders</a></li>
+                        <li><a href="{% url 'main:table' %}" class="mr-2 text-light">Reservation</a></li>
+                        <!-- <li><a href="{% url 'main:feedback' %}" class="mr-2 text-light">Feedback</a></li> -->
+                        
                         <li>
                             <form class="logout-link" action="{% url 'accounts:logout' %}" method="post">
                                 {% csrf_token %}
@@ -63,72 +67,80 @@
           {% endfor %}
         {% endif %}
         {% block content %}{% endblock %}
-    </main>
-    <footer id="footer" class="footer-1">
-		<div class="main-footer widgets-dark typo-dark">
-			<div class="container">
-				<div class="row">
-				
-					<div class="col-xs-12 col-sm-6 col-md-3">
-						<div class="widget subscribe no-box">
-							<h5 class="widget-title">Smart Canteen<span></span></h5>
-							<a href="#"><h4>E-Food</h4></a>
-						</div>
-					</div>
-
-					<div class="col-xs-12 col-sm-6 col-md-3">
-						<div class="widget no-box">
-							<h5 class="widget-title">About Us<span></span></h5>
-							<ul class="thumbnail-widget">
-							<li>
-							<div class="thumb-content"><a href="#.">About Us</a></div> 
-							</li>
-							<li>
-							<div class="thumb-content"><a href="#.">Customer Feedback</a></div> 
-							</li>
-							<li>
-							<div class="thumb-content"><a href="#.">Snap Up Store</a></div> 
-							</li>
-							<li>
-							<div class="thumb-content"><a href="#.">Snap Up Videos</a></div> 
-							</li>
-							</ul>
-						</div>
-					</div>
-
-					<div class="col-xs-12 col-sm-6 col-md-3">
-						<div class="widget no-box">
-							<h5 class="widget-title">Get Started<span></span></h5>
-							<p>Log In and get your ordering<br> </p>
-							<a style="border-radius: 20px 20px" class="btn btn-outline-dark" href="#." target="_blank">Register Now</a>
-						</div>
-					</div>
-
-							
-					<div class="col-xs-12 col-sm-6 col-md-3">
-							<div class="widget no-box">
-							<h5 class="widget-title">Contact Us<span></span></h5>
-
-							<p>Rich Table Canteen</p>
-							<p>Gyalposhing College of Information<br></p>
-							<p><a href="mailto:info@domain.com" title="glorythemes">info@E-Food</p>
-						</div>
-					</div>
-
-				</div>
-			</div>
-		</div>
-					
-		<div class="footer-copyright">
-			<div class="container">
-				<div class="row">
-					<div class="col-md-12 text-center">
-					<p>© 2021 Copyright <a href="">snapup.bt</a></p>
-					</div>
-				</div>
-			</div>
-		</div>
-	</footer>
+    </main><br>
+    <div style="border: 2px solid black;">
+        <footer id="footer" class="footer-1" style="background-color:rgb(43, 46, 46)">
+            <div class="main-footer widgets-dark typo-dark">
+                <div class="container">
+                    <div class="row">
+                    
+                        <div class="col-xs-12 col-sm-6 col-md-3">
+                            <div class="widget subscribe no-box">
+                                <h5 class="widget-title"style="color: aliceblue;">Smart Canteen<span></span></h5>
+                                <hr color="white">
+                                <p style="color: aliceblue;">"We don't want to push our ideas on to customers, we simply want to make what they want."</p> 
+                            </div>
+                        </div>
+    
+                        <div class="col-xs-12 col-sm-6 col-md-3">
+                            <div class="widget no-box">
+                                <h5 class="widget-title" style="color: aliceblue;">About Us</h5>
+                                <hr color="white">
+                                
+                                <ul class="thumbnail-widget" style="text-decoration: none;" >
+                                        <div class="thumb-content" style="color: aliceblue;"><a href="#.">signup</a></div> 
+                                        <div class="thumb-content" style="color: aliceblue;"><a href="#.">Login</a></div> 
+                                        <div class="thumb-content" style="color: aliceblue;"><a href="#.">My cart</a></div> 
+                                        <div class="thumb-content" style="color: aliceblue;"><a href="#.">Your orders</a></div> 
+                                        <div class="thumb-content" style="color: aliceblue;"><a href="#.">Reservation</a></div> 
+                                </ul>
+                            </div>
+                        </div>
+    
+                        <div class="col-xs-12 col-sm-6 col-md-3">
+                            <div class="widget no-box">
+                                <h5 class="widget-title" style="color: aliceblue;">Get Started<span></span></h5>
+                                <hr color="white">
+                                <p style="color: aliceblue;">Log In and get your ordering<br> </p>
+                                <img src="../media/bg.jpg" alt="" height="50px";width="60px";>
+                                <img src="../media/allo dum.jpg" alt="" height="50px";width="50px";>
+                                <img src="../media/chana.jpg" alt="" height="50px";width="70px";>
+                                <img src="../media/fried rice.jpg" alt="" height="60px";width="50px";>
+                                <img src="../media/momo11.jpg" alt="" height="50px";width="50px";>
+                                <img src="../media/eggfried.jpg" alt="" height="50px";width="50px";>
+                            </div>
+                        </div>
+    
+                                
+                        <div class="col-xs-12 col-sm-6 col-md-3">
+                                <div class="widget no-box">
+                                <h5 class="widget-title" style="color: aliceblue;">Contact Us<span></span></h5>
+                                <hr color="white">
+                                <p style="color: aliceblue;">Rich Table Canteen</p>
+                                <p style="color: aliceblue;">Gyalposhing College of Information<br></p>
+                                <p style="color: aliceblue;">Phone Number:17274648</p>
+                                <p></p>
+                                <p><a href="mailto:yangdendeki97@gmail.com" title="glorythemes" style="color: rgb(252, 244, 244);">smartcanteen@97gmail.com</p>
+                            </div>
+                        </div>
+    
+                    </div>
+                </div>
+            </div>
+                        
+            <div class="footer-copyright">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-12 text-center">
+                       
+                        <h6>  <p style="color: aliceblue;">©Copyright 2021 Smart-Canteen | All Rights Reserved <a href="">smart canteen</a></p> </h6>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
+    
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
